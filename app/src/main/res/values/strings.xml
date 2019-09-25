@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Nroxy</string>
+    <string name="preference">Preference</string>
+    <string name="toggle">Toggle</string>
+    <string name="help">Help</string>
+    <string name="enable">Enable</string>
+    <!--<string name="binary_executable_file">Binary Executable File</string>-->
+    <string name="entrypoint_script">Entrypoint Script</string>
+    <string name="environment_variables">Environment Variables</string>
+    <string name="command_line_arguments">Command Line Arguments</string>
+    <string name="proxy_address">Proxy Address</string>
+    <string name="filter_type">Filter Type</string>
+    <string name="application_selector">Application Selector</string>
+    <string name="nodejs_runtime">Node.js Runtime</string>
+    <string name="vpn_service">VPN Service</string>
+    <string name="env_tips">In the &quot;NAME=VALUE, ...&quot; Format</string>
+    <string name="proxy_tips">Support HTTP Proxy Only</string>
+    <string name="about">About</string>
+    <string name="whitelist">Whitelist</string>
+    <string name="blacklist">Blacklist</string>
+    <string name="none">&lt;None&gt;</string>
+    <string name="select_script_file">Select script file</string>
+    <string name="install_file_manager">Please install a File Manager</string>
+    <string name="access_file_failed">Selected file cannot be accessed</string>
+    <string name="developer">Developer</string>
+    <string name="version">Version</string>
+    <string name="application">Application</string>
+    <string name="applications">Applications</string>
+    <string name="invalid_address">Invalid Address</string>
+    <string name="global">Global</string>
+</resources>

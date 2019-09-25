@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:example="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory android:title="@string/nodejs_runtime">
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="shell"
+            android:title="@string/enable" />
+
+        <!--<EditTextPreference-->
+            <!--android:dependency="shell"-->
+            <!--android:key="bin_url"-->
+            <!--android:singleLine="true"-->
+            <!--android:dialogLayout="@layout/dialog_download"-->
+            <!--android:positiveButtonText="Positive"-->
+            <!--android:negativeButtonText="Negative"-->
+            <!--android:title="@string/binary_executable_file" />-->
+
+        <CheckBoxPreference
+            android:dependency="shell"
+            android:defaultValue="false"
+            android:key="script"
+            android:title="@string/entrypoint_script" />
+
+        <EditTextPreference
+            android:dependency="shell"
+            android:key="env"
+            android:singleLine="true"
+            android:dialogMessage="@string/env_tips"
+            android:title="@string/environment_variables" />
+
+        <EditTextPreference
+            android:dependency="shell"
+            android:key="argv"
+            android:singleLine="true"
+            android:title="@string/command_line_arguments" />
+    </PreferenceCategory>
+
+
+    <PreferenceCategory android:title="@string/vpn_service">
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="vpn"
+            android:title="@string/enable" />
+
+        <dev.nondanee.nroxy.EditUrlPreference
+            android:dependency="vpn"
+            android:key="proxy"
+            android:inputType="textUri"
+            android:defaultValue="http://127.0.0.1:8080"
+            android:singleLine="true"
+            android:dialogMessage="@string/proxy_tips"
+            android:title="@string/proxy_address" />
+
+        <ListPreference
+            android:dependency="vpn"
+            android:entries="@array/preference_name_filter_type"
+            android:entryValues="@array/preference_value_filter_type"
+            android:defaultValue="allow"
+            android:key="type"
+            android:title="@string/filter_type" />
+
+        <dev.nondanee.nroxy.ApplicationListPreference
+            android:key="applications"
+            android:dependency="vpn"
+            android:title="@string/application_selector"
+            android:entries="@array/preference_array_empty"
+            android:entryValues="@array/preference_array_empty" />
+    </PreferenceCategory>
+
+
+    <PreferenceCategory android:title="@string/about">
+        <PreferenceScreen
+            android:title="@string/developer"
+            android:key="developer"
+            android:summary="nondanee">
+            <!--<intent-->
+                <!--android:action="android.intent.action.VIEW"-->
+                <!--android:data="https://github.com/nondnaee" />-->
+        </PreferenceScreen>
+
+        <PreferenceScreen
+            android:title="@string/version"
+            android:key="version"
+            android:summary="1.0">
+        </PreferenceScreen>
+    </PreferenceCategory>
+
+</PreferenceScreen>

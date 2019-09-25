@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="preference_array_empty">
+    </string-array>
+
+    <string-array name="preference_name_filter_type">
+        <item>@string/whitelist</item>
+        <item>@string/blacklist</item>
+    </string-array>
+    <string-array name="preference_value_filter_type">
+        <item>allow</item>
+        <item>disallow</item>
+    </string-array>
+</resources>

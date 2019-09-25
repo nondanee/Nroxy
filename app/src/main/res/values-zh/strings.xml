@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Nroxy</string>
+    <string name="about">关于</string>
+    <string name="access_file_failed">无法读取文件</string>
+    <string name="whitelist">白名单</string>
+    <string name="application_selector">应用选择器</string>
+    <string name="command_line_arguments">命令行参数</string>
+    <string name="blacklist">黑名单</string>
+    <string name="enable">启用</string>
+    <string name="entrypoint_script">入口脚本</string>
+    <string name="env_tips">格式为 &quot;NAME=VALUE, ...&quot;</string>
+    <string name="environment_variables">环境变量</string>
+    <string name="filter_type">过滤器类型</string>
+    <string name="help">帮助</string>
+    <string name="install_file_manager">请安装文件管理器</string>
+    <string name="nodejs_runtime">Node.js 运行时</string>
+    <string name="preference">设置</string>
+    <string name="proxy_address">代理地址</string>
+    <string name="proxy_tips">仅支持 HTTP 代理</string>
+    <string name="select_script_file">选择脚本文件</string>
+    <string name="toggle">开关</string>
+    <string name="none">&lt;空&gt;</string>
+    <string name="vpn_service">VPN 服务</string>
+    <string name="version">版本</string>
+    <string name="developer">开发者</string>
+    <string name="application">个应用</string>
+    <string name="applications">个应用</string>
+    <string name="global">全局</string>
+    <string name="invalid_address">无效地址</string>
+</resources>
