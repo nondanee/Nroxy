@@ -134,6 +134,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        syncToggle();
         return true;
     }
 
@@ -195,6 +196,7 @@ public class MainActivity extends AppCompatActivity {
         public void onServiceConnected(ComponentName name, IBinder binder) {
             ShellService.ServiceBinder serviceBinder = (ShellService.ServiceBinder) binder;
             shellService = serviceBinder.getService();
+            syncToggle();
 
             Messenger messenger = new Messenger(handler);
             Message message = new Message();
@@ -209,6 +211,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onServiceDisconnected(ComponentName name) {
             shellService = null;
+            syncToggle();
             Log.d(TAG, "ShellService Disconnected");
         }
     };
@@ -217,10 +220,12 @@ public class MainActivity extends AppCompatActivity {
         public void onServiceConnected(ComponentName className, IBinder binder) {
             TunnelService.ServiceBinder serviceBinder = (TunnelService.ServiceBinder) binder;
             tunnelService = serviceBinder.getService();
+            syncToggle();
         }
 
         public void onServiceDisconnected(ComponentName className) {
             tunnelService = null;
+            syncToggle();
             Log.d(TAG, "TunnelService Disconnected");
         }
     };
