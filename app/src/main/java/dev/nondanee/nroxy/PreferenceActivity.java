@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.EditTextPreference;
@@ -69,12 +70,13 @@ public class PreferenceActivity extends AppCompatActivity {
             });
         }
 
-        @TargetApi(23)
         private boolean permitStorage() {
             try {
-                if (getActivity().checkSelfPermission(Constant.PERMISSIONS_STORAGE[0]) != PackageManager.PERMISSION_GRANTED) {
-                    requestPermissions(Constant.PERMISSIONS_STORAGE, Constant.CODE_REQUEST_STORAGE);
-                    return false;
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    if (getActivity().checkSelfPermission(Constant.PERMISSIONS_STORAGE[0]) != PackageManager.PERMISSION_GRANTED) {
+                        requestPermissions(Constant.PERMISSIONS_STORAGE, Constant.CODE_REQUEST_STORAGE);
+                        return false;
+                    }
                 }
             }
             catch (Exception e) {
