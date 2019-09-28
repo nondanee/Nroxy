@@ -54,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
         final TextContainer container = findViewById(R.id.container);
         final TextView output = findViewById(R.id.output);
 
-
         handler = new Handler(){
             @Override
             public void handleMessage(Message message) {
@@ -152,7 +151,8 @@ public class MainActivity extends AppCompatActivity {
         String command = "node" + " " + path + " " + argv;
         List<String> env = new ArrayList(Arrays.asList(preferences.getString("env", "").split("\\s*,\\s*")));
         env.add("PATH=$PATH:" + (getFilesDir().getAbsolutePath() + File.separator + "usr" + File.separator + "bin"));
-//        Log.d(TAG, "startShell: command: " + command + " env: " + env);
+        env.removeAll(Arrays.asList("", null));
+//        Log.d(TAG, "startShell: command: " + command + " env: " + env + " env length: " + env.size());
 
         ShellService.start(this, command, env.toArray(new String[0]));
     }
