@@ -8,7 +8,7 @@ This Android App intergates the core of tun2http and a Node.js runtime.
 
 Because VPNService has the ability to no-aware take over of global traffic from Android Mobile without ROOT, A server powered by Node.js can directly run in the APP and proxy all flows from all APPs.
 
-The reason why using binary file instead of [Node.js for Mobile Apps](https://github.com/JaneaSystems/nodejs-mobile) to run Node.js is the node process raised by JNI function can not be gracefully turned down ([nodejs-mobile/issues/221](https://github.com/JaneaSystems/nodejs-mobile/issues/221)).
+The reason why using binary file instead of [Node.js for Mobile Apps](https://github.com/JaneaSystems/nodejs-mobile) to run Node.js is because the node thread raised by JNI function can not be gracefully turned down ([JaneaSystems/nodejs-mobile#221](https://github.com/JaneaSystems/nodejs-mobile/issues/221)).
 
 ## Preview
 
@@ -18,7 +18,9 @@ The reason why using binary file instead of [Node.js for Mobile Apps](https://gi
 ## Credit
 
 - [forbe/tun2http](https://github.com/forbe/tun2http) (HTTP proxy to VPNService converter)
+
 - [tempage/dorynode](https://github.com/tempage/dorynode) (Where Node.js binary for Android is from)
+
 - [sjitech/nodejs-android-prebuilt-binaries](https://github.com/sjitech/nodejs-android-prebuilt-binaries) (Alternative binary file repository)
 
 ## License
