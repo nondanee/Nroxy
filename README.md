@@ -18,9 +18,7 @@ The reason why using binary file instead of [Node.js for Mobile Apps](https://gi
 ## Credit
 
 - [forbe/tun2http](https://github.com/forbe/tun2http) (HTTP proxy to VPNService converter)
-
 - [tempage/dorynode](https://github.com/tempage/dorynode) (Where Node.js binary for Android is from)
-
 - [sjitech/nodejs-android-prebuilt-binaries](https://github.com/sjitech/nodejs-android-prebuilt-binaries) (Alternative binary file repository)
 
 ## License
