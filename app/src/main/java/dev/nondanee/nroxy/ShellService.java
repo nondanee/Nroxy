@@ -97,7 +97,7 @@ public class ShellService extends Service {
     private void start(String command, String[] env) {
         if (shellProcess != null) return;
         String packageFiles = getApplicationContext().getFilesDir().getAbsolutePath();
-        String[] shell = {"sh", "-c", command};
+        String[] shell = {"/system/bin/sh", "-c", command};
         try{
             shellProcess = Runtime.getRuntime().exec(shell, env, new File(packageFiles));
             stdoutThread = outputReader(shellProcess.getInputStream());
