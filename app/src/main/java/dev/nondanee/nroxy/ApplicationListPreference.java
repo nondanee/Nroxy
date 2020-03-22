@@ -83,7 +83,7 @@ public class ApplicationListPreference extends MultiSelectListPreference {
         intent.addCategory(Intent.CATEGORY_LAUNCHER);
 
         PackageManager packageManager = getContext().getPackageManager();
-        List<ResolveInfo> list = packageManager.queryIntentActivities(intent, PackageManager.PERMISSION_GRANTED);
+        List<ResolveInfo> list = packageManager.queryIntentActivities(intent, PackageManager.GET_META_DATA);
         Collections.sort(list, new ResolveInfo.DisplayNameComparator(packageManager));
 
         for (ResolveInfo info : list) {
