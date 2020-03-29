@@ -70,9 +70,9 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
-        checkOnStart();
+//        checkOnStart();
     }
-
+/*
     private void checkOnStart() {
         int version = preferences.getInt("version", 0);
         if (version < BuildConfig.VERSION_CODE) {
@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
-
+*/
     private boolean tunnelRunning() {
         return tunnelService != null && tunnelService.running();
     }
@@ -150,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
         String argv = preferences.getString("argv", "");
         String command = "node" + " " + path + " " + argv;
         List<String> env = new ArrayList(Arrays.asList(preferences.getString("env", "").split("\\s*,\\s*")));
-        env.add("PATH=$PATH:" + (getFilesDir().getAbsolutePath() + File.separator + "usr" + File.separator + "bin"));
+        env.add("PATH=$PATH:" + getApplicationInfo().nativeLibraryDir);
         env.removeAll(Arrays.asList("", null));
 //        Log.d(TAG, "startShell: command: " + command + " env: " + env + " env length: " + env.size());
 
