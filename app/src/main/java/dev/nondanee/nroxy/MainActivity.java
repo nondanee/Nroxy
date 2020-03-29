@@ -118,8 +118,8 @@ public class MainActivity extends AppCompatActivity {
         toggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                boolean shell = preferences.getBoolean("shell", true);
-                boolean vpn = preferences.getBoolean("vpn", true);
+                boolean shell = preferences.getBoolean("shell", false);
+                boolean vpn = preferences.getBoolean("vpn", false);
 
                 if (isChecked) {
                     if (!tunnelRunning() && vpn) startVpn();
