@@ -146,9 +146,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void startShell() {
+        String bin = "libnode.so"; // binary file with fake name (only libxxx.so can be extracted)
         String path = preferences.getString("path", "");
         String argv = preferences.getString("argv", "");
-        String command = "node" + " " + path + " " + argv;
+        String command = bin + " " + path + " " + argv;
         List<String> env = new ArrayList(Arrays.asList(preferences.getString("env", "").split("\\s*,\\s*")));
         env.add("PATH=$PATH:" + getApplicationInfo().nativeLibraryDir);
         env.removeAll(Arrays.asList("", null));
